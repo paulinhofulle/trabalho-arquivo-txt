@@ -1,0 +1,13 @@
+SELECT nome_completo,
+       endereco,
+       cep,
+       valor_venda (preco_venda * unidade)
+       from public.cliente
+       join public.vendas
+       using (cliente_codigo)
+       join public.periodo
+       using (periodo_codigo)
+	where ano = 1997
+	and mes = 1
+	order by nome_completo;
+       
